@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Q1> Create 2 objects- parent and child.Attach methods to parrent and use those methods in child object using parents prototype</h4>
+    <p> const parent={</p>
+        <p> fname:"yadav",</p>
+        <p> method:function mtd(){</p>
+            <p> console.log("inside parent object method "+this.fname);</p>
+            <p> }</p>
+        <p>}</p>
+    <p> const child={</p>
+        <p> __proto__ : parent</p>
+        <p>}</p>
+    
+    <p>child.method();</p>
+    <p><b>output: inside parent object method yadav</b></p>
+
+    <h4>Q2> Write code to explain prototype chainging.</h4>
+    <p>const parentObj = {</p>
+        <p>name: 'Parent',</p>
+        <p> sayHello: function() {</p>
+            <p> console.log(`Hello, I'm ${this.name}.`);</p>
+        <p> }</p>
+        <p>};</p>
+        <p> const childObj = Object.create(parentObj);</p>
+        <p> childObj.name = 'Child';</p>
+        <p>childObj.sayHello();  </p>
+        <p><b>Output : Hello, I'm Child.</b></p>
+        <h4>Q3> Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays.</h4>
+        <p>  Array.prototype.sum=function(){</p>
+            <p> let sum=0;</p>
+            <p>for(let i=0;i < this.length;i++){</p>
+                <p>  sum+=this[i];</p>
+                <p> }</p>
+            <p>console.log(sum);</p>
+            <p>}</p>
+        <p> let arr=[1,2,3,4,5];</p>
+        <p> arr.sum();</p>
+        
+        <p> or</p>
+                        <p> const Add={</p>
+            <p> sum:function(arr){</p>
+                <p>let res=0;</p>
+                <p>for(let i=0;i< arr.length;i++){</p>
+                        <p>  res+=arr[i];</p>
+                        <p>  }</p>
+                    <p>  console.log("sum of array elements: "+ res);</p>
+                    <p> }</p>
+            <p> }</p>
+        <p> Add.sum([1,2,3,4,5])</p>
+        <p><b>Output : sum of array elements:15</b></p>
+        <p><h4>Q4>  Write a JavaScript function to retrieve all the names of object's own and inherited properties.</h4>
+         <p>const user = {</p>
+            <p>  name: 'Alex',</p>
+            <p>     age: 30</p>
+            <p> }</p>
+        <p> const props = Object.getOwnPropertyNames(user)</p>
+        <p>console.log(props)</p>
+        <p><b> Output: [ 'name', 'age' ]</b></p>
+</body>
+</html>
